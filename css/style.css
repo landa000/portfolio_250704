@@ -1,0 +1,286 @@
+/* style.css */
+
+:root { --color-yellow :#cea462; --color-indigo :#2a2f43; --color-black : #202020; --base-width: 1600px; --base-width-02: 1440px; --base-width-m: calc(100vw - 60px); --m-font-01:36px; --m-font-02: 24px; --m-font-03: 16px; } 
+
+#test { width: 100%; max-width: 1920px; margin: auto; overflow: hidden; display: flex; flex-direction: column; align-items: center; } 
+#test > img.sample { width:100%; min-width: 1920px; } 
+
+body { font-family: "Noto Sans KR", sans-serif; word-break: auto-phrase; } 
+section { overflow: hidden; } 
+
+.section-wrapper { width: var(--base-width); height:auto; margin: auto; } 
+
+.section-wrapper .title > p { font-size:48px; letter-spacing: -0.07em; font-weight:400; line-height: 1.45em; } 
+.section-wrapper .title > p.p-title { font-weight:700; } 
+
+span.hidden-text { display: block; width:0; height:0; overflow: hidden; } 
+
+/* 헤더 구간 */
+#header { width:100%; height: auto; text-align: center; margin: auto; position: fixed; background-color: #fff; filter: drop-shadow(0px 4px 2px rgba(0,0,0,0.08)); height: 90px; z-index: 100; } 
+#header > .header-wrapper { width:var(--base-width-02); height: 100%; display: flex; justify-content: space-between; align-items: center; margin:auto; } 
+#header a.logo { width: 224px; display: block; } 
+#header a.logo > img { width: 100%; } 
+#header > .header-menu { display: flex; background-color: rgba(255,255,255,0.85); justify-content: center; text-align: center; height: 0px; overflow: hidden; transition: all linear 0.5s; } 
+#header:hover > .header-menu { height: auto; transition: all linear 0.5s; } 
+#header > .header-menu > ul { display: flex; flex-direction: row; width:var(--base-width-02); justify-content: space-between; padding: 18px 0; } 
+#header > .header-menu > ul > li { height:auto; } 
+#header > .header-menu > ul > li > a { display: block; height:auto; padding: 10px 0; font-size: 18px; position: relative; } 
+#header > .header-menu > ul > li > a:hover { color: var(--color-yellow); } 
+#header > .header-menu > ul > li > a:hover::after { display: block; content:""; position: absolute; left:50%; bottom: 2px; transform: translateX(-50%); width:100%; height:1px; background-color: var(--color-yellow); } 
+
+#header .menu-btn { display:block; display: block; height: auto; } 
+#header .menu-btn div { width: 34px; height: 4px; margin: 7px 0; background-color: rgb(220, 220, 220); transition: all 0.25s; } 
+#header .menu-btn.mb { z-index:10; } 
+#header .menu-btn.mb > div  {position: relative;} 
+#header .menu-btn.mb > div:nth-child(1) { transform:skew(45deg,-45deg); top:11px; } 
+#header .menu-btn.mb > div:nth-child(2) { opacity: 0; } 
+#header .menu-btn.mb > div:nth-child(3) { transform: skew(-45deg,45deg); bottom: 11px; } 
+
+
+/* 플로트 구간 */
+#float { position: fixed; width:100%; height:auto; bottom: 6vh; z-index: 100; } 
+#float > .float-wrapper { display: flex; justify-content: center; align-items: center; } 
+#float > .float-wrapper > ul { display: flex; flex-direction: row; justify-content: space-between; } 
+#float > .float-wrapper > ul > li { height:auto; margin: 0 1vw; } 
+#float > .float-wrapper > ul > li > a { display:block; height:auto; color: #fff; font-size:24px; padding: 14px 28px; display: flex; align-items: center; background-color: var(--color-indigo); border-radius: 32px; } 
+#float > .float-wrapper > ul > li > a:hover { background-color: var(--color-yellow); filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.18)); } 
+#float > .float-wrapper > ul > li > a.kakao:hover { background-color: #fde501; color:#3c1e1e; } 
+#float > .float-wrapper > ul > li > a.kakao > img { filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(90deg) brightness(101%) contrast(101%); } 
+#float > .float-wrapper > ul > li > a.kakao:hover > img { filter:none; } 
+#float > .float-wrapper > ul > li > a.naver:hover { background-color: #00c13a; } 
+#float > .float-wrapper > ul > li > a > img { width: 36px; padding-right:8px; } 
+/* 메인 구간 */
+#main { padding: 90px 0 0 0; background-color: var(--color-black); height:auto; position: relative; } 
+#main > .section-wrapper { display: flex; flex-direction: column; align-items: center; padding: 240px 0; z-index: 2; position: relative; } 
+#main .main-title { text-align:center; color: #fff; } 
+#main .main-title > p { font-size:32px; letter-spacing: -0.07em; font-weight:300; padding-bottom: 36px; } 
+#main .main-title > p.p-title { font-size:64px; letter-spacing: -0.07em; font-weight:700; } 
+#main .main-count { display: flex; flex-direction: row; height:auto; padding-top:78px; } 
+#main .main-count > .ct-time,
+#main .main-count > .ct-case { font-size: 32px; letter-spacing: -0.07em; padding-left:50px; } 
+#main .main-count > .ct-time { padding-right:50px; position: relative; } 
+#main .main-count > .ct-time:after { position: absolute; content:""; display: block; width:1px; height:100%; background: rgba(255, 255, 255, 0.5); right:0; top:50%; transform: translateY(-54%); } 
+#main .main-count > .ct-time > p,
+#main .main-count > .ct-case > p { color:#fff; } 
+#main .main-count > .ct-time > p > span,
+#main .main-count > .ct-case > p > span { display:inline-block; height:82px; font-size: 64px; font-weight:700; position: relative; color: var(--color-yellow); z-index: 2; margin-right:20px; } 
+#main .main-count > .ct-time > p > span { width: 182px; } 
+#main .main-count > .ct-case > p > span { width: 152px; } 
+#main .main-count > .ct-time > p > span:before,
+#main .main-count > .ct-case > p > span:before { display: block; position: absolute; font-size:24px; font-weight:300; top:-40px; left:0; color:#fff; } 
+#main .main-count > .ct-time > p > span:before { content:"누적상담시간"; } 
+#main .main-count > .ct-case > p > span:before { content:"후기"; } 
+#main .main-count > .ct-time > p > span:after,
+#main .main-count > .ct-case > p > span:after { display: block; position: absolute; content:""; z-index:-1; top:-5%; left:50%; transform: translateX(-50%); background-color: var(--color-indigo); width:110%; height:100%; } 
+#main .main-date { color: #fff; font-size:24px; padding-top:40px; font-weight:300; } 
+#main > .video-bg { position: absolute; top: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; } 
+#main > .video-bg video { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; /* height: 56vw; */ } 
+/* @media screen and (max-aspect-ratio: 1250/703){
+ #main > .video-bg video { width: 160vh; height: 100%; } 
+ }*/
+#main > .video-bg::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-color: rgba(20, 20, 20, 0.60); } 
+
+/* 소개 구간 */
+#intro { position: relative; } 
+#intro > .section-wrapper { padding: 250px 0; display: flex; max-width: 1920px; } 
+#intro > .section-wrapper > .intro-left { } 
+#intro > .section-wrapper > .intro-left > .title { } 
+#intro > .section-wrapper > .intro-left > .intro-count { padding-top:168px; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul { display: flex; flex-direction: row; height:auto; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li { padding: 82px 38px 0; position: relative; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:nth-child(1) { padding-left: 0; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li > p { font-size:32px; letter-spacing: -0.07em; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li > p > span.ct02 { font-size:64px; color: var(--color-yellow); font-weight:700; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:before { display: block; content:""; position: absolute; top:0; left:38px; font-size: 24px; font-weight:400; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:after { display: block; content:""; position: absolute; bottom:0; right:0; width:1px; height:60%; background-color: rgba(20, 20, 20, 0.35); } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:nth-child(3):after { background-color: rgba(20, 20, 20, 0.0); } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:nth-child(1):before { content:"변호사"; left:0; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:nth-child(2):before { content:"성공 케이스"; } 
+#intro > .section-wrapper > .intro-left > .intro-count > ul > li:nth-child(3):before { content:"누적상담 건수"; } 
+#intro > .intro-bg { position: absolute; top:0; left:50%; transform:translateX(-50%); z-index: -1; } 
+#intro .intro-form { width: 680px; height: 100%; z-index: 10; box-sizing: border-box; position: absolute; top: 0; right: 0; padding: 0 116px; color: var(--color-black); background-color: rgb(42, 47, 67, 0.95); display: flex; flex-direction: column; justify-content: center; } 
+#intro .intro-form > form { display: -webkit-box; display: -ms-flexbox; display: flex; align-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%; height: auto; flex-direction: column; align-items: center; justify-content: center; } 
+#intro p.form-title { height: auto; padding: 0 0 80px 0; font-weight: 500; font-size:48px; text-align: center; color: #fff; letter-spacing: -0.05em; } 
+#intro .formList { float: left; height: auto; width: 100%; padding: 12px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: flex-end; flex-direction: row; box-sizing: border-box; } 
+#intro .formList>label { padding: 16px 0; width: 20%; font-weight: 700; text-align: left; color:#fff; font-size: 24px; } 
+#intro .formList>input { } 
+#intro .formList>input,.formList>textarea { width: 80%; height: auto; border: none; border-bottom: 1px solid rgba(238, 238, 238, 0.5); padding: 14px 0; background: none; font-weight: 400; font-size: 24px; color:#fff; } 
+#intro .formList>input::placeholder,.formList>textarea::placeholder { color: rgba(255 255 255 / 0.4); font-weight:300; } 
+#intro .formList>textarea { padding-top: 0.25rem; resize: none; } 
+#intro .formList.form_element { flex-direction: row; } 
+#intro .formList.contact-send { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; padding-top: 80px; } 
+#intro .formList.contact-send>input.send-btn { width: 100%; cursor: pointer; background-color: var(--color-black); font-weight: 700; text-align: center; text-indent: 0; padding: 20px 0; border: 0; font-size:24px; color: #fff; } 
+#intro .formList.form_element .check_s { font-size: 18px; padding: 5px; letter-spacing: 0.02em; font-weight: 400; } 
+#intro .formList.form_element > label { width:100%; } 
+#intro .formList #termsAgree1 { width: 20px; height: 20px; border: 0.0625rem solid #aaaaaa; padding:0; } 
+#intro input[type="checkbox"] { -webkit-appearance: none; position: relative; width: 1rem; height: 1rem; cursor: pointer; outline: none !important; border: 0.0625rem solid #eeeeee; border-radius: 0.125rem; background: #fbfbfb; } 
+#intro input[type="checkbox"]::before { content: "\2713"; position: absolute; top: 50%; left: 33%; font-size: 1.3rem; overflow: hidden; transform: scale(0) translate(-50%, -50%); line-height: 1; } 
+#intro input[type="checkbox"]:hover { border-color: rgba(170, 170, 170, 0.5); } 
+#intro input[type="checkbox"]:checked { border-color: rgba(255, 255, 255, 0.3); color: #fff; background-color: var(--color-yellow); } 
+#intro input[type="checkbox"]:checked::before { border-radius: 0.125rem; transform: scale(1) translate(-50%, -50%) } 
+#intro .intro-anchor { position: absolute; bottom:270px; } 
+
+
+/* 사례 구간 */
+#case { position: relative; height:auto; } 
+#case > .section-wrapper { padding: 250px 0; } 
+#case .title { padding-bottom:100px; } 
+#case .title > p { text-align: center; } 
+#case .title > p.p-title { color: var(--color-indigo); } 
+#case .case-wrapper { width:100%; display: flex; height:auto; padding-bottom:154px; } 
+#case .case-wrapper > .tab-menu { width:250px; display:flex; flex-direction: column; padding-right:20px; } 
+#case .case-wrapper > .tab-menu > li { } 
+#case .case-wrapper > .tab-menu > li > button { display: block; margin-bottom: 10px; width:100%; height:auto; box-sizing: border-box; background-color: rgb(42, 47, 67, 0.15); text-align: center; padding:18px; color: var(--color-black); font-size:24px; font-weight: 300; } 
+#case .case-wrapper > .tab-menu > li > button.on { background-color: var(--color-yellow); text-align: center; color: #fff; font-weight: 500; font-size: 32px; padding:14px 18px; } 
+#case .case-wrapper > .tab-content-wrapper { height: auto;; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content { display:none; width:1330px; border-left:2px solid #e0e0e0; border-bottom:2px solid #e0e0e0; box-sizing: border-box; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content.on { display: block; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail { height:140px; border-top: 2px solid #e0e0e0; box-sizing: border-box; display: flex; align-items: center; padding-left:40px; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail > .detail-left { width:1060px; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail > .detail-left > p { font-size:32px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.45; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail > .detail-left > p > span { font-size:24px; font-weight: 400; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail > .detail-right { width: 269px; background-color: var(--color-indigo); color: #fff; display: flex; height: 100%; align-items: center; justify-content: center; font-size: 32px; letter-spacing:-0.05em; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail > .detail-right > p { text-align: center; line-height: 1.35em; } 
+#case .case-wrapper > .tab-content-wrapper > .tab-content > .t-c-detail > .detail-right > p > span { font-size:24px; font-weight: 300; } 
+
+#case .case-swiper { } 
+#case .case-swiper > .swiper-wrapper { } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide { background-color: #e0e0e0; height:600px; border: 2px solid #e0e0e0; box-sizing: border-box; position: relative; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-top { position:absolute; z-index:10; width:346px; height: 70px; background-color: var(--color-indigo); bottom:240px; left:50%; transform: translateX(-50%); padding:20px; box-sizing: border-box; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-top:before { position:absolute; display:block; content:''; z-index:11; width:34px; height:34px; top:50%; transform: translateY(-50%); right:16px; color: #fff; background-image: url('../img/case/case-arrow.svg'); opacity: 0.4; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-top > p { color:#fff; font-size:30px; font-weight:400; letter-spacing:-0.05em; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-top > p > span { font-weight:300; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-bottom { position:absolute; z-index:10; width:100%; height: 200px; background-color: #fff; bottom:0; left:0; box-sizing: border-box; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-bottom:before { position:absolute; display:block; content:'담당 변호사'; z-index:11; font-size:24px; top:35px; left:38px; letter-spacing:-0.07em; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-bottom:after { position:absolute; display:block; content:''; z-index:11; width:80px; height:80px; top:80px; left:40px; background-image: url('../img/case/case-lawyer-01.png'); } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-img { position:absolute; top:0; left:0; width:100%; height:100%; z-index: 1; opacity: 0.4; display: flex; justify-content: center; align-items: flex-start; padding-top:8%; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide > .c-slide-img > img { width:84%; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide:hover > .c-slide-img { z-index: 15; background-color: var(--color-indigo); opacity: 1.0; align-items: center; padding-top: 0; } 
+#case .case-swiper > .swiper-wrapper > .swiper-slide:hover > .c-slide-img > img { width:94%; } 
+
+/* 변호사 약력 구간 */
+#lawyer { position: relative; height:auto; padding: 120px 0 0; } 
+#lawyer > .section-wrapper { position: relative; height:auto; min-height:1000px; } 
+#lawyer .title > p { position: relative; } 
+#lawyer .title > p.p-title:before { position:absolute; display:block; content:'"'; z-index:11; font-size:80px; top:-80px; left:-40px; letter-spacing:-0.07em; opacity: 0.2; } 
+#lawyer .title > p.p-title { } 
+#lawyer .lawyer-img { position: absolute; bottom:0; right:0; z-index:1; } 
+#lawyer .lawyer-img > .lawyer-name { position: absolute; top:264px; right:-40px; z-index:1; font-size:42px; letter-spacing: -0.05em; } 
+#lawyer .lawyer-img > .lawyer-name:before { position:absolute; display:block; content:'법무법인 ○○'; z-index:11; font-size:24px; font-weight: 300; top:-40px; left:0; letter-spacing:-0.07em; } 
+#lawyer .lawyer-img > .lawyer-name:after { position:absolute; display:block; content:''; z-index:11; width:4px; height:24px; background-color: var(--color-yellow); top:-39px; left:-10px; opacity: .6; } 
+#lawyer .lawyer-img > .lawyer-name > span { font-weight:700; } 
+#lawyer .lawyer-bg { position: absolute; bottom:0; z-index:-1; background-color: var(--color-indigo); height:490px; width: 100vw; left:50%; transform: translateX(-50%); text-align: center; } 
+#lawyer .lawyer-bg > img { position: absolute; bottom:0; left:50%; transform: translateX(-50%); } 
+#lawyer .lawyer-profile { position: absolute; bottom:74px; left:270px; z-index:10; } 
+#lawyer .lawyer-profile > ul.school { padding: 0 0 108px 0; } 
+#lawyer .lawyer-profile > ul.career { } 
+#lawyer .lawyer-profile > ul.career > li { color:#fff; font-weight:300; } 
+#lawyer .lawyer-profile > ul > li { font-size:24px; letter-spacing: -0.05em; line-height:1.75; } 
+#lawyer .lawyer-profile > ul > li.li-title { font-size:32px; font-weight:700; position: relative; padding: 0 0 12px 38px; } 
+#lawyer .lawyer-profile > ul > li.li-title:before { position:absolute; display:block; content:''; z-index:11; width:30px; height:30px; top:50%; transform: translateY(-66%); left:0; color: #fff; background-image: url('../img/lawyer-arrow.svg'); opacity: .6; } 
+#lawyer .lawyer-profile > ul.school > li.li-title:before { filter: invert(74%) sepia(34%) saturate(394%) hue-rotate(358deg) brightness(97%) contrast(84%); } 
+#lawyer .lawyer-profile > ul.career > li.li-title:before { filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(78deg) brightness(101%) contrast(103%); } 
+
+/* 유튜브 구간 */
+#youtube { padding: 120px 0; } 
+#youtube > .section-wrapper { position: relative; height:auto; text-align: center; } 
+#youtube .title { text-align: center; } 
+#youtube .title > p { position: relative; } 
+#youtube .title > p.p-title { color: var(--color-indigo); padding-bottom:90px; } 
+#youtube .youtube-container { display: flex; gap: 20px; } 
+#youtube .youtube-container > .youtube-content { height:auto; display: flex; flex-direction: column; } 
+#youtube .youtube-container > .youtube-content:nth-child(1) { flex-grow:2.8; } 
+#youtube .youtube-container > .youtube-content:nth-child(2) { flex-grow:1; gap: 20px; opacity: .5; } 
+#youtube .youtube-container > .youtube-content > iframe { width:100%; height:auto; background-color: var(--color-black);} 
+#youtube .youtube-container > .youtube-content:nth-child(1) > iframe { min-height: 600px; } 
+#youtube .youtube-container > .youtube-content:nth-child(2) > iframe { min-height: 290px; } 
+#youtube .youtube-link { margin-top:60px; } 
+#youtube .youtube-link > a { display: block; padding: 14px 36px; width:100%; height:100%; border: 2px solid #e0e0e0; border-radius: 40px; box-sizing: border-box; } 
+#youtube .youtube-link > a > p { font-size:32px; letter-spacing: -0.05em; position: relative; padding-right:40px; } 
+#youtube .youtube-link > a > p > span { font-weight:700; padding-left:10px; } 
+#youtube .youtube-link > a > p:before { position: absolute; display: block; content: ''; z-index: 11; width: 30px; height: 30px; top: 50%; transform: translateY(-45%); right: 0; color: #fff; background-image: url('../img/lawyer-arrow.svg'); opacity: .6; } 
+
+/* 미디어 구간 */
+#media { position:relative; background-color: #33384b; padding:150px 0; } 
+#media > .section-wrapper { position: relative; z-index: 2; } 
+#media .title > p { position: relative; color:#fff } 
+#media .title > p.p-title { padding-bottom:90px; } 
+#media .title > p.p-title > span { color: var(--color-yellow); } 
+#media .media-container { width:100%; display: flex; flex-wrap: wrap; flex-direction: row; justify-content: space-between; gap:20px; } 
+#media .media-container > .media-content { flex-grow:1; position: relative; height:auto; width: 32.5%; min-width:32.5%; } 
+#media .media-container > .media-content .media-title { text-overflow: ellipsis; white-space: nowrap; width: 100%; overflow: hidden; } 
+#media .media-container > .media-content:nth-of-type(n+4) { opacity: .5; } 
+#media .media-container > .media-content:nth-of-type(n+4):hover { opacity: 1; } 
+#media .media-container > .media-content:nth-of-type(n+4):before { position: absolute; content: ""; width:100%; height:100%; background-color:var(--color-indigo); z-index: -1; } 
+#media .media-container > .media-content:nth-of-type(n+4) > a:before { color: var(--color-indigo); } 
+#media .media-container > .media-content > a { display: block; position: relative; height:auto; padding:76px 28px; background-color: #fff; box-sizing: border-box; min-height: 250px; } 
+#media .media-container > .media-content > a:before { display: block; position: absolute; content:"| NEWS"; top:28px; left:28px; font-size:24px; color: var(--color-yellow); } 
+#media .media-container > .media-content > a:after { display: block; position: absolute; content:"더 보기"; bottom:28px; right:28px; font-size:24px; color: var(--color-indigo); background-image: url('../img/lawyer-arrow.svg'); background-repeat: no-repeat; background-position: right; padding-right:28px; opacity: .7; } 
+#media .media-container > .media-content > a > p { font-size:32px; font-weight: 700; letter-spacing: -0.07em; line-height: 1.55em; } 
+#media > .media-bg { position: absolute; top:0; left:50%; transform:translateX(-50%); z-index: 1; } 
+
+/* 컨택트 구간 */
+#contact { position:relative; padding:120px 0; background-color: var(--color-black); } 
+#contact > .contact-bg { position: absolute; top:0; left:50%; transform:translateX(-50%); } 
+#contact > .section-wrapper { display: flex; position: relative; z-index:1; justify-content: space-between; } 
+#contact .contact-left { color: #fff; padding-top:80px; } 
+#contact .contact-left > .title > p { font-size:64px; line-height: 1.3; } 
+#contact .contact-left > .p-sub { font-size:24px; letter-spacing: -0.07em; font-weight: 300; padding-top:84px; } 
+#contact .contact-left > .p-sub > span { font-weight: 700; } 
+ 
+#contact > .section-wrapper > .contact-form { background-color: #fff; padding:80px 104px 60px; border-radius: 16px; font-size:24px; width:790px; box-sizing: border-box; position: relative; } 
+#contact > .section-wrapper > .contact-form:after { display: block; position: absolute; content: "※ 입력해주신 정보는 저장되거나 공개되지 않으며 담당자에게 발송됩니다."; color:#fff; font-size: 24px; letter-spacing: -0.06em; font-weight:300; bottom:-40px; left:0; width:100%; text-align: center; } 
+#contact .intro-form > form { display: -webkit-box; display: -ms-flexbox; display: flex; align-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%; height: auto; flex-direction: column; align-items: center; justify-content: center; } 
+#contact .formList { float: left; height: auto; width: 100%; padding: 12px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: flex-start; flex-direction: row; box-sizing: border-box; } 
+#contact .formList>label { padding: 16px 0; width: 20%; font-weight: 700; text-align: left; font-size: 24px; } 
+#contact .formList>input { } 
+#contact .formList>input,.formList>textarea { width: 80%; height: auto; border: none; border-bottom: 1px solid rgb(42, 47, 67, 0.5); padding: 14px 0; background: none; font-weight: 400; font-size: 24px; color:var(--color-black); font-family: "Noto Sans KR", sans-serif; } 
+#contact .formList>textarea { resize: none; min-height:130px; } 
+#contact .formList>input::placeholder,.formList>textarea::placeholder { color: rgba(32 32 32 / 0.4); font-weight:300; font-family: "Noto Sans KR", sans-serif; } 
+#contact .formList.form_element { flex-direction: row; } 
+#contact .formList.contact-send { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; padding-top: 50px; } 
+#contact .formList.contact-send>input.send-btn { width: 100%; cursor: pointer; background-color: var(--color-indigo); font-weight: 700; text-align: center; text-indent: 0; padding: 20px 0; border: 0; font-size:24px; color: #fff; border-radius:36px; } 
+#contact .formList.form_element .check_s { font-size: 18px; padding: 5px; letter-spacing: 0.02em; font-weight: 400; } 
+#contact .formList.form_element > label { width:100%; } 
+#contact .formList #termsAgree1 { width: 20px; height: 20px; border: 0.0625rem solid #aaaaaa; padding:0; } 
+#contact input[type="checkbox"] { -webkit-appearance: none; position: relative; width: 1rem; height: 1rem; cursor: pointer; outline: none !important; border: 0.0625rem solid #eeeeee; border-radius: 0.125rem; background: #fbfbfb; } 
+#contact input[type="checkbox"]::before { content: "\2713"; position: absolute; top: 50%; left: 33%; font-size: 1.3rem; overflow: hidden; transform: scale(0) translate(-50%, -50%); line-height: 1; } 
+#contact input[type="checkbox"]:hover { border-color: rgba(170, 170, 170, 0.5); } 
+#contact input[type="checkbox"]:checked { border-color: rgba(255, 255, 255, 0.3); color: #fff; background-color: var(--color-yellow); } 
+#contact input[type="checkbox"]:checked::before { border-radius: 0.125rem; transform: scale(1) translate(-50%, -50%) } 
+
+/* 지도 구간 */
+#location { position:relative; padding:180px 0; } 
+#location > .section-wrapper { display: flex; justify-content: space-between; align-items: flex-end; } 
+#location .location-left { } 
+#location .location-left > .title > p.p-title { font-size:64px; padding-bottom: 70px; font-weight: 500; } 
+#location .location-left > .title > p.p-title > span { font-weight: 700; color: var(--color-indigo); } 
+#location .location-left > .location-list { } 
+#location .location-left > .location-list > li { padding: 27px 0 27px 46px; border-bottom: 1px solid rgb(42, 47, 67, .2); position: relative; } 
+#location .location-left > .location-list > li:before { position: absolute; display: block; content:""; width:35px; height:35px; top:50%; transform: translateY(-50%); left:0; background-repeat: no-repeat; } 
+#location .location-left > .location-list > li:nth-child(1):before { background-image: url("../img/l-location-icon.png"); } 
+#location .location-left > .location-list > li:nth-child(2):before { background-image: url("../img/l-call-icon.png"); } 
+#location .location-left > .location-list > li:nth-child(3):before { background-image: url("../img/l-mail-icon.png"); } 
+#location .location-left > .location-list > li:nth-child(4):before { background-image: url("../img/l-time-icon.png"); } 
+#location .location-left > .location-list > li > p { font-size:32px; letter-spacing: -0.05em; } 
+#location .location-left > .location-list > li > p > span { font-size:24px; font-weight:300; } 
+#location .location-right { width:790px; height:476px; background-color: var(--color-indigo); } 
+#location .location-right > .map-wrapper { width: 100%; height: 100%; position: relative; } 
+#location .location-right > .map-wrapper > #map { width: 100%; height: 100%; } 
+#location .location-right > .map-wrapper > .place-btn { position:absolute; z-index:100; width:250px; height:72px; bottom:-36px; right:24px; border-radius: 36px; border: 2px solid #fff; background-color: #00c13a; } 
+#location .location-right > .map-wrapper > .place-btn > a { display: flex; width: 100%; height: 100%; align-items: center; } 
+#location .location-right > .map-wrapper > .place-btn > a:before { position: absolute; display: block; content:""; width:40px; height:100%; background-image: url("../img/case/case-arrow.svg"); right:10px; top:50%; transform: translateY(-50%); background-repeat: no-repeat; background-position: center } 
+#location .location-right > .map-wrapper > .place-btn > a > img { padding: 0 12px; } 
+#location .location-right > .map-wrapper > .place-btn > a > p { color: #fff; font-size:18px; letter-spacing: -0.05em; text-align: left; } 
+
+/* 풋터 구간 */
+#footer { background-color: var(--color-black); padding:100px 0; } 
+#footer > .footer-wrapper { display: flex; justify-content: flex-start; color: #fff; width:var(--base-width); margin: auto; font-size:24px; line-height: 1.6; letter-spacing: -0.06em; font-weight:300; } 
+#footer > .footer-wrapper > .f-logo { padding: 0 60px 0 30px; } 
+#footer > .footer-wrapper > .f-list { display: flex; height:auto; } 
+#footer > .footer-wrapper > .f-list > li { position: relative; margin-right:60px; border-bottom: 1px solid rgb(255, 255, 255, .2); height: 100px; } 
+#footer > .footer-wrapper > .f-list > li:nth-child(1):before { display: block; position: absolute; content: "Copyright ⓒ 2024 All rights reserved"; color:#fff; font-size: 18px; letter-spacing: -0.02em; font-weight:300; bottom:-40px; left:0; width:100%; } 
+#footer > .footer-wrapper > .f-list > li > p > span { font-weight: 400; } 
+
+
+
